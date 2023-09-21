@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 public class MainTest {
 
-    @Test
+    @org.junit.jupiter.api.Test
     public void studentAge_Valid() {
         int age = 18;
         assertTrue(Main.studentAge_Valid(age));

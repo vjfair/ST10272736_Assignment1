@@ -32,33 +32,23 @@ public class Main {
         boolean exit = false;
         while(!exit)
         {
-            System.out.println("Please select one of the following items: " + "\n(1) Capture a new student" + "\n(2) Search for a student" + "\n(3) Delete a student "+ "\n(4) Print student report "+ "\n(5) Manage BCAD event" + "\n(6) Exit appliation" );
+            System.out.println("""
+                    Please select one of the following items:\s
+                    (1) Capture a new student
+                    (2) Search for a student
+                    (3) Delete a student\s
+                    (4) Print student report\s
+                    (5) Manage BCAD event
+                    (6) Exit appliation""");
+
             String input = keyboard.nextLine();
             switch (input) {
-                case "1" ->
-                {
-                    saveStudent();
-                }
-                case "2" ->
-                {
-                    searchStudent();
-                }
-                case "3" ->
-                {
-                    deleteStudent();
-                }
-                case "4" ->
-                {
-                    System.out.println(studentManager.studentsReport());
-                }
-                case "5" ->
-                {
-                    manageBcadEvent();
-                }
-                case "6" ->
-                {
-                    ExitStudentApplication();
-                }
+                case "1" -> saveStudent();
+                case "2" -> searchStudent();
+                case "3" -> deleteStudent();
+                case "4" -> System.out.println(studentManager.studentsReport());
+                case "5" -> manageBcadEvent();
+                case "6" -> ExitStudentApplication();
             }
         }
     }
@@ -117,13 +107,11 @@ public class Main {
     }
     public static boolean studentAge_Valid(int age)
     {
-        if (age >= 16) return true;
-        return false;
+        return age >= 16;
     }
     public static boolean studentAge_Invalid(int age)
     {
-        if (age < 16) return true;
-        return false;
+        return age < 16;
     }
     public static boolean studentAge_InvalidCharacter(String age)
     {
@@ -191,6 +179,7 @@ public class Main {
     }
     public static void ExitStudentApplication()
     {
+        exit = true;
         System.exit(0);
     }
 

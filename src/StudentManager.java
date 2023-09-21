@@ -10,7 +10,6 @@ public class StudentManager {
     ArrayList<Student> students = new ArrayList<Student>();
     ArrayList<BcadStudent> bcadStudents = new ArrayList<BcadStudent>();
 
-    int count = 0;
     public void addStudent(Student student)
     {
         students.add(student);
@@ -74,20 +73,19 @@ public class StudentManager {
     public String printAttedanceList()
     {
         String output = "";
-        try {
+        try
+        {
             Scanner scanner = new Scanner(new File("AttendanceList.txt"));
-            while (scanner.hasNext()){
+            while (scanner.hasNext())
+            {
                 output = output + scanner.nextLine();
             }
             scanner.close();
-        } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e)
+        {
             throw new RuntimeException(e);
         }
 
-
         return output;
     }
-
-
-
 }
